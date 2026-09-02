@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selenium Practice Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-container">
+        <h1>Selenium Automation Practice Form</h1>
+
+        <form id="test-form">
+
+            <!-- 1. Text input -->
+            <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Enter your full name">
+            </div>
+
+            <!-- 2. Email input -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com">
+            </div>
+
+            <!-- 3. Password input -->
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter password">
+            </div>
+
+            <!-- 4. Number input -->
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" class="form-control" min="1" max="120" placeholder="25">
+            </div>
+
+            <!-- 5. Telephone input -->
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+91 98765 43210">
+            </div>
+
+            <!-- 6. URL input -->
+            <div class="form-group">
+                <label for="website">Website:</label>
+                <input type="url" id="website" name="website" class="form-control" placeholder="https://example.com">
+            </div>
+
+            <!-- 7. Date input -->
+            <div class="form-group">
+                <label for="birthdate">Birth Date:</label>
+                <input type="date" id="birthdate" name="birthdate" class="form-control">
+            </div>
+
+            <!-- 8. Range slider -->
+            <div class="form-group">
+                <label for="rating">Rating: <span id="rating-value">5</span></label>
+                <input type="range" id="rating" name="rating" class="form-control" min="1" max="10" value="5">
+            </div>
+
+            <!-- 9. Radio buttons -->
+            <div class="form-group">
+                <label>Gender:</label>
+                <label><input type="radio" name="gender" value="male" class="radio-option"> Male</label>
+                <label><input type="radio" name="gender" value="female" class="radio-option"> Female</label>
+                <label><input type="radio" name="gender" value="other" class="radio-option" checked> Other</label>
+            </div>
+
+            <!-- 10. Checkboxes -->
+            <div class="form-group">
+                <label>Interests:</label>
+                <label><input type="checkbox" name="interests" value="coding" class="checkbox-option"> Coding</label>
+                <label><input type="checkbox" name="interests" value="reading" class="checkbox-option"> Reading</label>
+                <label><input type="checkbox" name="interests" value="gaming" class="checkbox-option"> Gaming</label>
+                <label><input type="checkbox" name="interests" value="music" class="checkbox-option"> Music</label>
+            </div>
+
+            <!-- 11. Single select dropdown -->
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country" class="form-control">
+                    <option value="">-- Select --</option>
+                    <option value="IN">India</option>
+                    <option value="US">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="DE">Germany</option>
+                </select>
+            </div>
+
+            <!-- 12. Multi-select dropdown -->
+            <div class="form-group">
+                <label for="skills">Skills (hold Ctrl to select multiple):</label>
+                <select id="skills" name="skills" multiple class="form-control" size="4">
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="csharp">C#</option>
+                    <option value="go">Go</option>
+                </select>
+            </div>
+
+            <!-- 13. Textarea -->
+            <div class="form-group">
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio" class="form-control" rows="3" placeholder="Tell us about yourself..."></textarea>
+            </div>
+
+            <!-- 14. File upload -->
+            <div class="form-group">
+                <label for="resume">Resume:</label>
+                <input type="file" id="resume" name="resume" class="form-control">
+            </div>
+
+            <!-- 15. Hidden input (invisible, for testing) -->
+            <input type="hidden" id="hidden-token" name="token" value="abc123">
+
+            <!-- 16. Link for LINK_TEXT / PARTIAL_LINK_TEXT -->
+            <div class="form-group">
+                <a href="/forgot-password" class="forgot-link">Forgot Password?</a>
+            </div>
+
+            <!-- 17. Buttons -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+                <button type="reset" class="btn btn-secondary" id="reset-btn">Reset</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        // Update range slider display
+        const slider = document.getElementById('rating');
+        const display = document.getElementById('rating-value');
+        slider.addEventListener('input', function() {
+            display.textContent = this.value;
+        });
+    </script>
+</body>
+</html>
