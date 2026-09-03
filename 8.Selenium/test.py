@@ -84,6 +84,7 @@ try:
     inspect_element(submit_btn)
 
     #8. By XPATH
+    # syntax: //tagname[@attribute='value']
     country = driver.find_element(By.XPATH , "//select[@id='country']")
     inspect_element(country)
 
